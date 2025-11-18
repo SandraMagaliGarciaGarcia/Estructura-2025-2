@@ -24,19 +24,24 @@ void cListaDinamica::crearLista(){
               aux=lista;
         }else{
             aux->sig=new cListaDinamica();
+             aux = aux->sig;
             cout<<"dame el numero del nodo"<<endl;
             cin>>aux->i;
-            aux = aux->sig;
+           
         }
     }
   imprimirLista(lista);
 
 }
 void cListaDinamica::imprimirLista(cListaDinamica *l){
-    cListaDinamica *aux=l;
+    /*cListaDinamica *aux=l;
     while(aux!=NULL){
         cout<<aux->i<<endl;
         aux=aux->sig;
+    }*/
+    cListaDinamica *aux1;
+    for(aux1=l;aux1!=NULL;aux1=aux1->sig){
+        cout<<aux1->i<<endl;
     }
 
 }
